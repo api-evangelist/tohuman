@@ -1,0 +1,19 @@
+generated: '2026-09-25'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://tohuman.io/pricing
+sources:
+- https://tohuman.io/pricing
+name: ToHuman pricing
+audience: business-product
+pricing_basis: per-seat
+plans:
+- name: Free
+  price_text: $0 USD forever
+  price: 0
+  description: 2,500 words per month, API access (60 requests/min), all intensities, document history, self-hosted model
+- name: Pro
+  price_text: $19 USD per month
+  price: 19
+  description: 100,000 words per month, higher API rate limits (300 requests/min), priority support, cancel anytime
+docs: https://tohuman.io/pricing

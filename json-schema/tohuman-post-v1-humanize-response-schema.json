@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/tohuman/main/json-schema/tohuman-post-v1-humanize-response-schema.json",
+  "title": "PostV1HumanizeResponse",
+  "x-generated": "2026-09-25",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/tohuman-openapi-generated.yml#/components/schemas/PostV1HumanizeResponse",
+  "type": "object",
+  "properties": {
+    "humanized_text": {
+      "type": "string",
+      "description": "Humanized version of the input"
+    },
+    "word_count": {
+      "type": "integer",
+      "description": "Word count of the output"
+    }
+  }
+}

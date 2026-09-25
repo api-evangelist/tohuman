@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/tohuman/main/json-schema/tohuman-post-v1-humanize-request-schema.json",
+  "title": "PostV1HumanizeRequest",
+  "x-generated": "2026-09-25",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/tohuman-openapi-generated.yml#/components/schemas/PostV1HumanizeRequest",
+  "type": "object",
+  "properties": {
+    "content": {
+      "type": "string",
+      "description": "AI‑generated text to humanize"
+    },
+    "intensity": {
+      "type": "string",
+      "description": "Desired intensity level (if supported)"
+    }
+  },
+  "required": [
+    "content"
+  ]
+}

@@ -1,0 +1,15 @@
+generated: '2026-09-25'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://tohuman.io/docs/quickstart
+sources:
+- https://tohuman.io/docs/quickstart
+- https://tohuman.io/docs/quickstart#authentication
+idempotency:
+  coverage: none
+  evidence: The documentation does not describe any idempotency key or header for write operations.
+pagination:
+  evidence: No pagination parameters or response fields are mentioned in the provided pages.
+authentication: Every ToHuman API endpoint requires a bearer token in the `Authorization` header; there is no other auth scheme or query‑parameter
+  fallback.
+docs: https://tohuman.io/docs/quickstart

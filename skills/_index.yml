@@ -1,0 +1,11 @@
+generated: '2026-09-25'
+method: generated
+generator: extract-docs-artifacts.py skills (local)
+source: openapi/_ae-authored/tohuman-openapi-generated.yml
+skills:
+- file: skills/tohuman-submit-humanization.md
+  name: tohuman-submit-humanization
+  api: openapi/_ae-authored/tohuman-openapi-generated.yml
+  operations:
+  - post_api_v1_humanizations
+  - get_api_v1_humanizations_humanizationid

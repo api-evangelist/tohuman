@@ -1,0 +1,90 @@
+generated: '2026-09-25'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 5
+  own: 2
+  other_domain: 3
+  platform: 0
+  roles:
+  - api
+  - docs
+  - other
+  - website
+hosts:
+- host: api.astral.sh
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: astral.sh
+  role: api
+  relation: other-domain
+- host: api.tohuman.io
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: tohuman.io
+  role: api
+  relation: own
+- host: astral.sh
+  found_by:
+  - apis[]
+  - probed
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types: []
+  serves:
+  - api
+  - hosting
+  vendor: vercel
+  registrable_domain: astral.sh
+  role: other
+  relation: other-domain
+- host: docs.astral.sh
+  found_by:
+  - probed
+  - site-links
+  - namespace-probe
+  - docs-index
+  - contract-discovery
+  - well-known
+  types: []
+  serves:
+  - docs
+  title: Astral Docs
+  status: 200
+  registrable_domain: astral.sh
+  role: docs
+  relation: other-domain
+- host: tohuman.io
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - docs-index
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Sandbox
+  - GettingStarted
+  - Website
+  - Documentation
+  - APIReference
+  - Pricing
+  - Blog
+  - Support
+  - TermsOfService
+  - PrivacyPolicy
+  - SignUp
+  serves:
+  - docs
+  - cdn
+  vendor: cloudflare
+  registrable_domain: tohuman.io
+  role: website
+  relation: own

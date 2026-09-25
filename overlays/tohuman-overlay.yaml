@@ -1,0 +1,5 @@
+generated: 2026-09-25
+method: derived
+source: openapi/_ae-authored/tohuman-openapi-generated.yml
+overlay:
+  actions: []

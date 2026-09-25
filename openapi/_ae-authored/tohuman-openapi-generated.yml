@@ -1,0 +1,286 @@
+openapi: 3.1.0
+info:
+  title: ToHuman API
+  version: '2026-09-25'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-09-25: 6 operation(s) read from 20 public documentation page(s) (each operation
+    names its page in x-source). This is not the provider''s published contract; ToHuman has published no machine-readable contract that the pipeline
+    could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 4
+    documentation: 2
+    pages-with-code: 20
+    pages-read: 20
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-09-25'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://tohuman.io/ai-humanizer-api
+  - https://tohuman.io/playground
+  - https://tohuman.io/use-cases/saas
+  - https://tohuman.io/docs/quickstart
+  - https://tohuman.io/docs/humanizations
+  - https://tohuman.io/tutorials/zapier-humanize-ai-text
+  - https://tohuman.io/tutorials/humanize-ai-text-api-guide
+  - https://tohuman.io/tutorials/n8n-humanize-ai-text
+  - https://tohuman.io/tutorials/make-humanize-ai-text
+  - https://tohuman.io/tutorials/crewai-humanize-ai-text
+  - https://tohuman.io/tutorials/autogen-humanize-ai-text
+  - https://tohuman.io/tutorials/langchain-humanize-ai-text
+  - https://tohuman.io/tutorials/mcp-server-humanize-ai-text
+  - https://tohuman.io/use-cases/email-campaigns
+  - https://tohuman.io/use-cases/marketing
+  - https://tohuman.io/use-cases/chatbots
+  - https://tohuman.io/use-cases/edtech
+  - https://tohuman.io/chatgpt-plugin
+  - https://tohuman.io/compare/tohuman-vs-undetectable-ai
+  - https://tohuman.io/compare/writehuman-alternative
+servers:
+- url: https://astral.sh
+paths:
+  /api/v1/humanizations:
+    post:
+      operationId: post_api_v1_humanizations
+      tags:
+      - Api
+      summary: Async submit/poll endpoint at ToHuman
+      description: Submit a longer job for asynchronous processing; poll or use webhook to retrieve the humanized text.
+      x-source: https://tohuman.io/ai-humanizer-api
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApiV1HumanizationsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostApiV1HumanizationsResponse'
+      x-evidence:
+        kind: documentation
+  /api/v1/humanizations/sync:
+    post:
+      operationId: post_api_v1_humanizations_sync
+      tags:
+      - Api
+      summary: POST /api/v1/humanizations/sync
+      x-source: https://tohuman.io/ai-humanizer-api
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApiV1HumanizationsSyncRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X POST https://tohuman.io/api/v1/humanizations/sync  -H \"Authorization: Bearer YOUR_API_KEY\"  -H \"Content-Type: application/json\"\
+          \  -d '{\"content\": \"Your AI-generated text...\", \"intensity\": \"medium\"}' \n Intensity is one of minimal , subtle , medium , or\
+          \ heavy . medium is the recommended default; heavy is what you reach for on text that consistently fails GPTZero. The response contains\
+          \ humaniz"
+  /api/v1/humanizations/{humanizationid}:
+    get:
+      operationId: get_api_v1_humanizations_humanizationid
+      tags:
+      - Api
+      summary: GET /api/v1/humanizations/{humanizationId}
+      x-source: https://tohuman.io/docs/humanizations
+      parameters:
+      - name: humanizationid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApiV1HumanizationsHumanizationidResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl https://tohuman.io/api/v1/humanizations/43  -H \"Authorization: Bearer $TOHUMAN_API_KEY\" \n Response \n {\n \"id\" : 43\
+          \ ,\n \"document_id\" : 16 ,\n \"status\" : \"completed\" ,\n \"intensity\" : \"heavy\" ,\n \"output_content\" : \"The fully humanized\
+          \ content...\" ,\n \"processing_time\" : 7.87 ,\n \"error_message\" : null ,\n \"created_at\" : \"2026-03-21T12:00:00Z\" ,\n \"completed_at\"\
+          \ : \"2026-03-21T12:00:08Z\" ,\n \"scores\" : {"
+  /api/v1/humanize:
+    get:
+      operationId: get_api_v1_humanize
+      tags:
+      - Api
+      summary: GET /api/v1/humanize
+      x-source: https://tohuman.io/tutorials/crewai-humanize-ai-text
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl examples \n Make.com Integration \n Humanize AI text in Make scenarios \n Zapier Integration \n No-code AI content pipeline\
+          \ \n LangChain Integration \n Custom tool for LangChain agents \n CrewAI Integration \n Multi-agent humanization workflows \n MCP Server\
+          \ \n Humanize text from Claude Desktop & Cursor \n AutoGen Integration \n Microsoft AutoGen content pipeline \n All tutorials \n Blog\
+          \ \n Log in \n Sign up"
+  /submit:
+    post:
+      operationId: post_submit
+      tags:
+      - Submit
+      summary: Async endpoint for Undetectable.ai
+      description: Submit text and receive a document ID; later GET the document object to obtain the humanized output.
+      x-source: https://tohuman.io/ai-humanizer-api
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostSubmitRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostSubmitResponse'
+      x-evidence:
+        kind: documentation
+  /v1/humanize:
+    post:
+      operationId: post_v1_humanize
+      tags:
+      - Humanize
+      summary: Sync endpoint for WriteHuman
+      description: Synchronous call that returns the humanized text in the same response.
+      x-source: https://tohuman.io/ai-humanizer-api
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostV1HumanizeRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV1HumanizeResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    PostApiV1HumanizationsRequest:
+      type: object
+      properties:
+        content:
+          type: string
+          description: Your AI‑generated text
+        intensity:
+          type: string
+          description: One of minimal, subtle, medium, heavy
+        webhook_url:
+          type: string
+          description: Optional URL for webhook delivery when job completes
+      required:
+      - content
+      - intensity
+    PostApiV1HumanizationsResponse:
+      type: object
+      properties:
+        document_id:
+          type: string
+          description: Identifier to poll for the result
+    PostApiV1HumanizationsSyncRequest:
+      type: object
+      properties:
+        content:
+          type: string
+        intensity:
+          type: string
+    GetApiV1HumanizationsHumanizationidResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+        document_id:
+          type: integer
+        status:
+          type: string
+        intensity:
+          type: string
+        output_content:
+          type: string
+        processing_time:
+          type: number
+        error_message:
+          type:
+          - string
+          - 'null'
+        created_at:
+          type: string
+          format: date-time
+        completed_at:
+          type: string
+          format: date-time
+        scores:
+          type: object
+          properties:
+            detectability:
+              type: number
+            change_ratio:
+              type: number
+            quality_fallbacks:
+              type: integer
+    PostSubmitRequest:
+      type: object
+      properties:
+        content:
+          type: string
+          description: Text to be humanized
+      required:
+      - content
+    PostSubmitResponse:
+      type: object
+      properties:
+        document_id:
+          type: string
+          description: ID to retrieve the processed document later
+    PostV1HumanizeRequest:
+      type: object
+      properties:
+        content:
+          type: string
+          description: AI‑generated text to humanize
+        intensity:
+          type: string
+          description: Desired intensity level (if supported)
+      required:
+      - content
+    PostV1HumanizeResponse:
+      type: object
+      properties:
+        humanized_text:
+          type: string
+          description: Humanized version of the input
+        word_count:
+          type: integer
+          description: Word count of the output
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+security:
+- bearer: []
+tags:
+- name: Api
+- name: Humanize
+- name: Submit

@@ -1,23 +1,129 @@
 aid: tohuman
+
 name: ToHuman
-description: 'ToHuman is a company surfaced via the API Evangelist harvest backlog (source: new-submission)
-  and added to the network as a stub for full-pipeline profiling.'
+
+image: https://tohuman.io/og-default.png
+
+description: ToHuman provides AI text humanization services, enabling developers to make AI‑generated content undetectable and natural‑sounding.
+  Their platform offers APIs for transforming articles, emails, ads, and other marketing copy, with integrations for n8n, Make, Zapier, LangChain,
+  and more. Use cases span education, SaaS, chatbots, and content creation, supported by detailed documentation, pricing plans, and a playground
+  for testing. The company aims to help users bypass AI detection tools while maintaining high‑quality, human‑like output.
+
 url: https://raw.githubusercontent.com/api-evangelist/tohuman/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:new-submission
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-25 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-25'
+
 modified: '2026-09-25'
+
 tags:
-- Company
-apis: []
+- AI
+- Text-Humanization
+- Content-Generation
+- Marketing
+- SaaS
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Conventions
+  url: conventions/tohuman-conventions.yml
+- type: RateLimits
+  url: rate-limits/tohuman-rate-limits.yml
+- type: Plans
+  url: plans/tohuman-plans-pricing.yml
+- type: Spectral
+  url: rules/tohuman-rules.yml
+- type: JSONLD
+  url: json-ld/tohuman-context.jsonld
+- type: Vocabulary
+  url: vocabulary/tohuman-vocabulary.yml
+- type: DataModel
+  url: data-model/tohuman-data-model.yml
+- type: Authentication
+  url: authentication/tohuman-authentication.yml
+- type: Conformance
+  url: conformance/tohuman-conformance.yml
+- type: MCPServer
+  url: mcp/tohuman-mcp.yml
+- type: Hosts
+  url: hosts/tohuman-hosts.yml
+- type: Vendors
+  url: vendors/tohuman-vendors.yml
+- type: Sandbox
+  url: https://tohuman.io/playground
+- type: GettingStarted
+  url: https://tohuman.io/docs/quickstart
+- type: DomainSecurity
+  url: security/tohuman-domain-security.yml
 - type: Website
   url: https://tohuman.io/
+- type: Documentation
+  url: https://tohuman.io/docs
+- type: APIReference
+  url: https://tohuman.io/docs
+- type: Pricing
+  url: https://tohuman.io/pricing
+- type: Blog
+  url: https://tohuman.io/blog
+- type: Support
+  url: https://tohuman.io/contact
+- type: TermsOfService
+  url: https://tohuman.io/terms
+- type: PrivacyPolicy
+  url: https://tohuman.io/privacy
+- type: SignUp
+  url: https://tohuman.io/users/sign_up
+
+apis:
+- aid: tohuman:tohuman-api
+  name: ToHuman API
+  description: 'ToHuman API as documented publicly: 6 operations. Contract generated from the documentation by API Evangelist (2026-09-25); not
+    the provider''s own document.'
+  humanURL: https://tohuman.io/ai-humanizer-api
+  baseURL: https://astral.sh
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/tohuman-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/tohuman-get-api-v1-humanizations-humanizationid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/tohuman-post-api-v1-humanizations-request-schema.json
+  - type: JSONSchema
+    url: json-schema/tohuman-post-v1-humanize-request-schema.json
+  - type: JSONSchema
+    url: json-schema/tohuman-post-v1-humanize-response-schema.json
+  - type: JSONSchema
+    url: json-schema/tohuman-post-submit-response-schema.json
+  - type: JSONSchema
+    url: json-schema/tohuman-post-submit-request-schema.json
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: Documentation pages exist but no OpenAPI, AsyncAPI, GraphQL, gRPC, or WSDL contracts were found.
+  evidence:
+  - url: https://tohuman.io/docs
+    status: 200
+  checked: 2026-09-25
+x-enrichment:
+  date: '2026-09-25'
+  status: enriched
+  artifacts_added: 25
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local

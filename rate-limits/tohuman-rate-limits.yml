@@ -1,0 +1,24 @@
+generated: '2026-09-25'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://tohuman.io/docs/rate-limits
+sources:
+- https://tohuman.io/docs/rate-limits
+name: ToHuman rate limits
+limits:
+- name: Free
+  limit_text: 60 requests / minute
+  max: 60
+  window: minute
+  burst: 10 requests burst (implied by table but not required here)
+- name: Pro
+  limit_text: 300 requests / minute
+  max: 300
+  window: minute
+  burst: 30 requests burst (implied by table but not required here)
+headers:
+- X-RateLimit-Limit
+- X-RateLimit-Remaining
+- X-RateLimit-Reset
+exhaustion_status: 429
+docs: https://tohuman.io/docs/rate-limits

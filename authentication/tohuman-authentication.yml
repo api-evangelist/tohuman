@@ -1,0 +1,17 @@
+generated: '2026-09-25'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://tohuman.io/docs/quickstart#authentication
+sources:
+- https://tohuman.io/docs/quickstart#authentication
+- https://tohuman.io/docs/quickstart
+description: Authentication
+schemes:
+- type: http-bearer
+  name: Bearer
+  evidence: Every ToHuman API endpoint requires that token as a bearer credential in the Authorization header — there is no other auth scheme,
+    and no query-parameter fallback.
+  location: header
+  header: Authorization
+  how_to_obtain: Sign in to your ToHuman dashboard and create a new API token.
+docs: https://tohuman.io/docs/quickstart#authentication
