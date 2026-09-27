@@ -1,0 +1,107 @@
+openapi: 3.2.0
+info:
+  title: ToHuman Humanize API
+  version: '2026-09-25'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-09-25: 6 operation(s) read from 20 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; ToHuman has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 4
+    documentation: 2
+    pages-with-code: 20
+    pages-read: 20
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-09-25'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://tohuman.io/ai-humanizer-api
+  - https://tohuman.io/playground
+  - https://tohuman.io/use-cases/saas
+  - https://tohuman.io/docs/quickstart
+  - https://tohuman.io/docs/humanizations
+  - https://tohuman.io/tutorials/zapier-humanize-ai-text
+  - https://tohuman.io/tutorials/humanize-ai-text-api-guide
+  - https://tohuman.io/tutorials/n8n-humanize-ai-text
+  - https://tohuman.io/tutorials/make-humanize-ai-text
+  - https://tohuman.io/tutorials/crewai-humanize-ai-text
+  - https://tohuman.io/tutorials/autogen-humanize-ai-text
+  - https://tohuman.io/tutorials/langchain-humanize-ai-text
+  - https://tohuman.io/tutorials/mcp-server-humanize-ai-text
+  - https://tohuman.io/use-cases/email-campaigns
+  - https://tohuman.io/use-cases/marketing
+  - https://tohuman.io/use-cases/chatbots
+  - https://tohuman.io/use-cases/edtech
+  - https://tohuman.io/chatgpt-plugin
+  - https://tohuman.io/compare/tohuman-vs-undetectable-ai
+  - https://tohuman.io/compare/writehuman-alternative
+servers:
+- url: https://astral.sh
+security:
+- bearer: []
+tags:
+- name: Humanize
+paths:
+  /api/v1/humanize:
+    get:
+      operationId: get_api_v1_humanize
+      tags:
+      - Humanize
+      summary: GET /api/v1/humanize
+      x-source: https://tohuman.io/tutorials/crewai-humanize-ai-text
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl examples \n Make.com Integration \n Humanize AI text in Make scenarios \n Zapier Integration \n No-code AI content pipeline \n LangChain Integration \n Custom tool for LangChain agents \n CrewAI Integration \n Multi-agent humanization workflows \n MCP Server \n Humanize text from Claude Desktop & Cursor \n AutoGen Integration \n Microsoft AutoGen content pipeline \n All tutorials \n Blog \n Log in \n Sign up"
+  /v1/humanize:
+    post:
+      operationId: post_v1_humanize
+      tags:
+      - Humanize
+      summary: Sync endpoint for WriteHuman
+      description: Synchronous call that returns the humanized text in the same response.
+      x-source: https://tohuman.io/ai-humanizer-api
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostV1HumanizeRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV1HumanizeResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    PostV1HumanizeResponse:
+      type: object
+      properties:
+        humanized_text:
+          type: string
+          description: Humanized version of the input
+        word_count:
+          type: integer
+          description: Word count of the output
+    PostV1HumanizeRequest:
+      type: object
+      properties:
+        content:
+          type: string
+          description: AI‑generated text to humanize
+        intensity:
+          type: string
+          description: Desired intensity level (if supported)
+      required:
+      - content
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer

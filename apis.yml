@@ -90,16 +90,16 @@ common:
   url: https://tohuman.io/users/sign_up
 
 apis:
-- aid: tohuman:tohuman-api
-  name: ToHuman API
-  description: 'ToHuman API as documented publicly: 6 operations. Contract generated from the documentation by API Evangelist (2026-09-25); not
-    the provider''s own document.'
+- aid: tohuman:tohuman-humanizations-api
+  name: ToHuman Humanizations API
+  description: The Humanizations API from ToHuman — 3 operation(s) for humanizations.
   humanURL: https://tohuman.io/ai-humanizer-api
   baseURL: https://astral.sh
+  tags:
+  - Humanizations
   properties:
   - type: OpenAPI
-    url: openapi/_ae-authored/tohuman-openapi-generated.yml
-    x-provenance: generated
+    url: openapi/tohuman-humanizations-api-openapi.yml
   - type: JSONSchema
     url: json-schema/tohuman-get-api-v1-humanizations-humanizationid-response-schema.json
   - type: JSONSchema
@@ -112,7 +112,50 @@ apis:
     url: json-schema/tohuman-post-submit-response-schema.json
   - type: JSONSchema
     url: json-schema/tohuman-post-submit-request-schema.json
-
+- aid: tohuman:tohuman-humanize-api
+  name: ToHuman Humanize API
+  description: The Humanize API from ToHuman — 2 operation(s) for humanize.
+  humanURL: https://tohuman.io/ai-humanizer-api
+  baseURL: https://astral.sh
+  tags:
+  - Humanize
+  properties:
+  - type: OpenAPI
+    url: openapi/tohuman-humanize-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/tohuman-get-api-v1-humanizations-humanizationid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/tohuman-post-api-v1-humanizations-request-schema.json
+  - type: JSONSchema
+    url: json-schema/tohuman-post-v1-humanize-request-schema.json
+  - type: JSONSchema
+    url: json-schema/tohuman-post-v1-humanize-response-schema.json
+  - type: JSONSchema
+    url: json-schema/tohuman-post-submit-response-schema.json
+  - type: JSONSchema
+    url: json-schema/tohuman-post-submit-request-schema.json
+- aid: tohuman:tohuman-submit-api
+  name: ToHuman Submit API
+  description: The Submit API from ToHuman — 1 operation(s) for submit.
+  humanURL: https://tohuman.io/ai-humanizer-api
+  baseURL: https://astral.sh
+  tags:
+  - Submit
+  properties:
+  - type: OpenAPI
+    url: openapi/tohuman-submit-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/tohuman-get-api-v1-humanizations-humanizationid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/tohuman-post-api-v1-humanizations-request-schema.json
+  - type: JSONSchema
+    url: json-schema/tohuman-post-v1-humanize-request-schema.json
+  - type: JSONSchema
+    url: json-schema/tohuman-post-v1-humanize-response-schema.json
+  - type: JSONSchema
+    url: json-schema/tohuman-post-submit-response-schema.json
+  - type: JSONSchema
+    url: json-schema/tohuman-post-submit-request-schema.json
 x-coverage:
   state: unreadable
   reason: no-machine-readable-spec

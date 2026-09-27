@@ -1,0 +1,25 @@
+{
+  "provider": "tohuman",
+  "sources": [
+    "_ae-authored/tohuman-openapi-generated.yml"
+  ],
+  "outputs": [
+    "tohuman-humanizations-api-openapi.yml",
+    "tohuman-humanize-api-openapi.yml",
+    "tohuman-submit-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "tohuman-openapi-generated.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "tohuman-openapi-generated.yml: tagged paths POST /api/v1/humanizations -> Humanizations",
+    "tohuman-openapi-generated.yml: tagged paths POST /api/v1/humanizations/sync -> Humanizations",
+    "tohuman-openapi-generated.yml: tagged paths GET /api/v1/humanizations/{humanizationid} -> Humanizations",
+    "tohuman-openapi-generated.yml: tagged paths GET /api/v1/humanize -> Humanize",
+    "tohuman-openapi-generated.yml: declared missing tag: Humanizations",
+    "apis.yml register: written (+3 apis, 3 total)"
+  ],
+  "skipped": []
+}
