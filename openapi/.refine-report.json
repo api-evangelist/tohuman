@@ -19,7 +19,11 @@
     "tohuman-openapi-generated.yml: tagged paths GET /api/v1/humanizations/{humanizationid} -> Humanizations",
     "tohuman-openapi-generated.yml: tagged paths GET /api/v1/humanize -> Humanize",
     "tohuman-openapi-generated.yml: declared missing tag: Humanizations",
-    "apis.yml register: written (+3 apis, 3 total)"
+    "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "tohuman-humanizations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tohuman-humanize-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tohuman-submit-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

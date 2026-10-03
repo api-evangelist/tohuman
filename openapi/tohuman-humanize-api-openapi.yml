@@ -81,15 +81,6 @@ paths:
         kind: documentation
 components:
   schemas:
-    PostV1HumanizeResponse:
-      type: object
-      properties:
-        humanized_text:
-          type: string
-          description: Humanized version of the input
-        word_count:
-          type: integer
-          description: Word count of the output
     PostV1HumanizeRequest:
       type: object
       properties:
@@ -101,6 +92,15 @@ components:
           description: Desired intensity level (if supported)
       required:
       - content
+    PostV1HumanizeResponse:
+      type: object
+      properties:
+        humanized_text:
+          type: string
+          description: Humanized version of the input
+        word_count:
+          type: integer
+          description: Word count of the output
   securitySchemes:
     bearer:
       type: http
