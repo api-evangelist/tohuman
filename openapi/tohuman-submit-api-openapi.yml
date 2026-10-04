@@ -67,12 +67,6 @@ paths:
         kind: documentation
 components:
   schemas:
-    PostSubmitResponse:
-      type: object
-      properties:
-        document_id:
-          type: string
-          description: ID to retrieve the processed document later
     PostSubmitRequest:
       type: object
       properties:
@@ -81,6 +75,12 @@ components:
           description: Text to be humanized
       required:
       - content
+    PostSubmitResponse:
+      type: object
+      properties:
+        document_id:
+          type: string
+          description: ID to retrieve the processed document later
   securitySchemes:
     bearer:
       type: http
