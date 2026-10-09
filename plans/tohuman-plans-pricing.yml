@@ -17,3 +17,23 @@ plans:
   price: 19
   description: 100,000 words per month, higher API rate limits (300 requests/min), priority support, cancel anytime
 docs: https://tohuman.io/pricing
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  - subscription
+  units: []
+  plans:
+  - name: Free
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods: []
+  - name: Pro
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
