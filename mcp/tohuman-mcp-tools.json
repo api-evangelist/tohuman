@@ -1,0 +1,49 @@
+{
+  "endpoint": "https://tohuman.io/mcp",
+  "captured": "2026-10-20",
+  "method": "initialize + tools/list (anonymous, no tool called; roadmap#992)",
+  "protocol_version": "2025-06-18",
+  "server_info": {
+    "name": "tohuman",
+    "title": "ToHuman — Humanize AI Text",
+    "version": "0.1.0"
+  },
+  "result": {
+    "tools": [
+      {
+        "name": "humanize",
+        "title": "Humanize AI text",
+        "description": "Rewrite AI-generated text so it reads like natural human writing. Sends the text to the ToHuman API, which reworks sentence structure, word choice, and rhythm while preserving the meaning. Use it on drafts, emails, reports, and posts before publishing. Works best on complete paragraphs (50+ words); max 2000 words per call.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string",
+              "description": "The AI-generated text to humanize. Max 2000 words per call."
+            },
+            "intensity": {
+              "type": "string",
+              "enum": [
+                "minimal",
+                "subtle",
+                "medium",
+                "heavy"
+              ],
+              "default": "medium",
+              "description": "How aggressively to rewrite. 'medium' (default) balances naturalness and fidelity; 'heavy' is the deepest rewrite."
+            }
+          },
+          "required": [
+            "text"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "idempotentHint": false,
+          "openWorldHint": false
+        }
+      }
+    ]
+  }
+}
